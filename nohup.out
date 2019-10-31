@@ -1,0 +1,30 @@
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:4000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 854-660-852
+49.206.216.39 - - [14/Mar/2019 17:54:48] "GET / HTTP/1.1" 200 -
+49.206.216.39 - - [14/Mar/2019 17:54:50] "GET /favicon.ico HTTP/1.1" 404 -
+183.83.74.71 - - [14/Mar/2019 17:54:52] "GET / HTTP/1.1" 200 -
+ * Serving Flask app "main" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:4000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 854-660-852
+183.83.74.71 - - [14/Mar/2019 17:55:19] "GET / HTTP/1.1" 200 -
+223.227.40.37 - - [14/Mar/2019 17:55:25] "GET / HTTP/1.1" 200 -
+223.227.40.37 - - [14/Mar/2019 17:56:07] "GET / HTTP/1.1" 200 -
+223.227.40.37 - - [14/Mar/2019 17:56:14] "POST / HTTP/1.1" 200 -
+183.83.74.71 - - [14/Mar/2019 17:56:17] "GET / HTTP/1.1" 200 -
+183.83.74.71 - - [14/Mar/2019 17:56:22] "GET / HTTP/1.1" 200 -
+183.83.74.71 - - [14/Mar/2019 17:56:32] "GET / HTTP/1.1" 200 -
+223.227.40.37 - - [14/Mar/2019 17:57:37] "GET / HTTP/1.1" 200 -
+223.227.40.37 - - [14/Mar/2019 17:57:42] "POST / HTTP/1.1" 200 -

@@ -1,0 +1,310 @@
+<!doctype html
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+ 
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <title>App!</title>
+<div class="header">
+  <a href="#default" class="logo">GOOGOLML</a>
+  <div class="header-right">
+    <a class="active" href="index.html">Home</a>
+    <a href="export1.html">Map</a>
+    <a href="police.html">Police</a>
+    <a href="/visual">Visualization</a>
+  </div>
+</div>
+
+
+<div class="container">
+	<div>
+		<h1 class="jumbotron" style="padding: 1%">Road Accident Prediction and Classification </h1>
+	</div>
+	<div class="row">
+		<div class="col-8">
+	      	<div class="form-group">
+			<div class="form-group">
+                            <label for="Did_Police_Officer_Attend">Did Police Officer Attend Scene of Accident</label>
+                            <input type="text" class="form-control" name="Did_Police_Officer_Attend" value="1" id="Did_Police_Officer_Attend">
+                        </div>
+			    <label for="Did_Police_Officer_Attend">Latitude and Longitude</label>
+			 <div class="row">
+			    <div class="col-6">
+			    <input type="text" class="form-control" name="lat" value="55" id="lat">
+				</div>
+				<div class="col-6">
+			    <input type="text" class="form-control" name="lon" value="-121" id="lon">
+				</div>
+			</div>
+			    <br>
+			    <center>
+			    	<button id = "getIt" onclick = "getLocation() ">Send Cordinates to Update Conditions</button>
+			    </center>
+			    
+			</div>
+	      
+	      	<div class="form-group">
+			    <label for="Age_of_Driver">Age of Driver</label>
+			    <input type="text" class="form-control" name="Age_of_Driver" value="34" id="age_of_driver">
+			</div>
+
+	      	<div class="form-group">
+			    <label for="Vehicle_Type">Vehicle Type</label>
+			        <select class="form-control" id="vehicle_type" name="Weather_Conditions">
+		       		<option value="1">1 : Pedal cycle</option>
+			        <option value="2">2 : Motorcycle 50cc and under</option>
+			        <option value="3">3 : Motorcycle 125cc and unders</option>
+			        <option value="4">4 : Motorcycle over 125cc and up to 500cc</option>
+			        <option value="5">5 : Motorcycle over 500cc</option>
+			        <option value="8">8 : Taxi/Private hire car</option>
+			        <option value="9">9 : Car</option>
+			        <option value="10">10 : Minibus (8 - 16 passenger seats)</option>
+			        <option value="11">11 : Bus or coach (17 or more pass seats)</option>
+			        <option value="18">18 : Tram</option>
+			        <option value="20">20 : Truck(Goods)</option>
+			        <option value="23">23 : Electric motorcycle</option>			        
+			      </select>
+
+			    <!-- <input type="text" class="form-control" name="Vehicle_Type" value="11" id="vehicle_type"> -->
+			</div>
+
+			<div class="form-group">
+			    <label for="Age_of_Vehicle">Age of Vehicle</label>
+			    <input type="text" class="form-control" name="Age_of_Vehicle" value="10" id="age_of_vehicle">
+			</div>
+
+	      	<div class="form-group">
+			    <label for="Engine_Capacity_CC">Engine Capacity in CC</label>
+			    <input type="text" class="form-control" name="Engine_Capacity_CC" value="8300.0" id="engine_cc">
+			</div>
+
+	      	<div class="form-group">
+			    <label for="Day_of_Week">Day of Week</label>
+
+			      <select class="form-control" id="day">
+		       		<option value="1">1 : Sunday</option>
+			        <option value="2">2 : Monday</option>
+			        <option value="3">3 : Tuesday</option>
+			        <option value="4">4 : Wednesday</option>
+			        <option value="5">5 : Thursday</option>
+			        <option value="6">6 : Friday</option>
+			        <option value="7">7 : Saturday</option>
+			      </select>
+			    <!-- <input type="text" class="form-control" name="Day_of_Week" value="5" id="day"> -->
+			</div>
+
+	      	<div class="form-group">
+			    <label for="Weather_Conditions">Weather Conditions</label>
+			        <select class="form-control" id="weather" name="Weather_Conditions">
+		       		<option value="1">1 : Fine no high winds</option>
+			        <option value="2">2 : Raining no high winds</option>
+			        <option value="3">3 : Snowing no high winds</option>
+			        <option value="4">4 : Fine + high winds</option>
+			        <option value="5">5 : Raining + high winds</option>
+			        <option value="6">6 : Snowing + high winds</option>
+			        <option value="7">7 : Fog or mist</option>
+			      </select>
+			   <!--  <input type="text" class="form-control" name="Weather_Conditions" value="1" id="weather"> -->
+			</div>
+
+	      	<div class="form-group">
+			    <label for="Light_Conditions">Light_Conditions</label>
+			    <select class="form-control" name="Light_Conditions" id="light" >
+		       		<option value="1">1 : Daylight</option>
+			        <option value="4">4 : Darkness - lights lit</option>
+			        <option value="5">5 : Darkness - lights unlit</option>
+			        <option value="6">6 : Darkness - no lighting</option>
+			      </select>
+			    <!-- <input type="text" class="form-control" name="Light_Conditions" value="1" id="light" > -->
+			</div>
+	      	<div class="form-group">
+			    <label for="Road_Surface_Conditions">Road Surface Conditions</label>
+
+			    <select class="form-control" name="Road_Surface_Conditions" id="roadsc">
+		       		<option value="1">1 : Dry</option>
+			        <option value="2">2 : Wet or damp</option>
+			        <option value="3">3 : Snow</option>
+			        <option value="4">4 : Frost or Ice</option>
+			        <option value="5">5 : Flood</option>
+			        <option value="7">7 : Mud</option>
+			    </select>
+			    <!-- <input type="text" class="form-control" name="Road_Surface_Conditions" value="1" id="roadsc">
+ -->			</div>
+
+	      	<div class="form-group">
+			    <label for="gender">Gender</label>
+			    <select class="form-control" name="Road_Surface_Conditions" id="gender">
+		       		<option value="1">1 : Male</option>
+			        <option value="2">2 : Female</option>
+			        <option value="3">3 : Unknown</option>
+			    </select>
+			   <!--  <input type="text" class="form-control" name="gender" value="1" id="gender"> -->
+			</div>
+
+	      	<div class="form-group">
+			    <label for="Speed_limit">Speed Limit</label>
+			    <input type="text" class="form-control" type="text" name="Speed_limit" value="30" id="speedl">
+			</div>
+
+			<button type="button" class="btn btn-success btn-block" id="submitBtn">Predict</button>
+	<button type="button" class="btn btn-info btn-block" id="smsbutton">sms</button>
+		</div>
+		<div class="col-4 jumbotron text-center" style="position: fixed; right: 0">
+			<strong>Accident Severity Table <br></strong>
+			<div class="alert alert-warning">
+			  	1 = FATAL<br>
+				2 = SERIOUS<br>
+				3 = SLIGHT <br>
+			</div>
+		    <h3 style="text-align: center;"> OUTPUT PREDICTED : </h3>
+		    <div style="font-size:300%;text-align:center;" id="result"></div>
+			<hr>
+		</div>
+	</div>
+  
+	
+</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+
+
+function showPosition(position) {
+	    var i=position.coords.latitude;
+    	var j=position.coords.longitude;
+    	document.getElementById("lat").value=i;
+    	document.getElementById("lon").value=j;
+    	
+
+        $.ajax({url: "https://api.openweathermap.org/data/2.5/weather?lat="+i+"&lon="+j+"&APPID=dc0d323b4933f0c038f261425b17038e",
+        	success: function(res){
+        		if(res.weather[0].main === "mist")
+        		document.getElementById("weather").value=7;
+        		else if(res.weather[0].main === "clear")
+        		{
+        			document.getElementById("weather").value=1;
+        			document.getElementById("roadsc").value=1;
+        		}
+        		else if(res.weather[0].main === "Rain")
+        			{
+        				document.getElementById("weather").value=2;
+        				document.getElementById("roadsc").value=2;
+        			}
+        		else if(res.weather[0].main === "Snow")
+        		{
+        			document.getElementById("weather").value=3;
+        			document.getElementById("roadsc").value=3;
+        		}
+        		else if(res.weather[0].main === "Clouds")
+        		{
+        			document.getElementById("weather").value=4;
+        			document.getElementById("roadsc").value=7;
+        		}
+        		
+        		  var d = new Date();
+  				  var n = d.getHours();
+  				  if(n>=19 || n<=6)
+        		  document.getElementById("light").value=4;
+        		  else if(n>6 || n<18)
+        		  	document.getElementById("light").value=1;
+
+        		  var d = d.getDay();
+        		  document.getElementById("day").value=d+1;
+
+        }});
+    }
+    }
+
+	    document.addEventListener('DOMContentLoaded', function() {
+	        document.getElementById('submitBtn').addEventListener('click', function(e) {
+	            e.preventDefault();
+	            $('#result').html('Loading...');
+			console.log($('#gender').val());
+
+	            $.post(
+	                '/',
+	                {
+	                    Did_Police_Officer_Attend: $('#Did_Police_Officer_Attend').val(),
+	                    age_of_driver: Math.log(parseInt($('#age_of_driver').val())),
+	                    vehicle_type: $('#vehicle_type').val(), 
+	                    age_of_vehicle: Math.log(parseInt($('#age_of_vehicle').val())),
+	                    engine_cc: $('#engine_cc').val(),
+	                    day: $('#day').val()[0],
+	                    weather: $('#weather').val()[0],
+	                    light: $('#light').val()[0],
+	                    roadsc: $('#roadsc').val()[0],
+	                    gender: $('#gender').val()[0],
+	                    speedl: $('#speedl').val()      
+	                },
+	                function(data) {
+	                    $('#result').html(data);
+	                    console.log(data);
+	                }
+	            );
+	        });
+
+		     document.getElementById('smsbutton').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    $('#result').html('Loading...');
+                        console.log($('#gender').val());
+
+                    $.post(
+                        '/sms/',
+                        {
+                            Did_Police_Officer_Attend: $('#Did_Police_Officer_Attend').val(),
+                            age_of_driver: Math.log(parseInt($('#age_of_driver').val())),
+                            vehicle_type: $('#vehicle_type').val(),
+                            age_of_vehicle: Math.log(parseInt($('#age_of_vehicle').val())),
+                            engine_cc: $('#engine_cc').val(),
+                            day: $('#day').val()[0],
+                            weather: $('#weather').val()[0],
+                            light: $('#light').val()[0],
+                            roadsc: $('#roadsc').val()[0],
+                            gender: $('#gender').val()[0],
+                            speedl: $('#speedl').val()
+                        },
+                        function(data) {
+                            $('#result').html(data);
+                            console.log(data);
+                        }
+                    );
+                });
+		    
+	    });
+	</script>
+  </body>
+  <div>
+<footer class="footer">Copyright &copy; tracker.com</footer>
+</div>
+</html>
+
+  <!-- <script> -->
+<!-- // function validate() {
+//     var x = document.forms["myform"]["user"].value;
+//     if (x == "") {
+//         alert("Name must be filled out");
+//         return false;
+//     }
+// } -->
+<!-- </script> -->
+
